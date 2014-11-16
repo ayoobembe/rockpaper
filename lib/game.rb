@@ -1,4 +1,4 @@
-require 'player'
+require './lib/player.rb'
 
 class Game
 attr_accessor :players, :player_choice, :game_choice, :items, :result, :rules
@@ -77,6 +77,6 @@ attr_accessor :players, :player_choice, :game_choice, :items, :result, :rules
 	# puts game.game_choice
 	game.set_rules
 	game.compare(item1,item2)
-	puts game.declare_winner
+	puts "You " + game.declare_winner
 
 end
