@@ -46,14 +46,14 @@ attr_accessor :players, :player_choice, :game_choice, :items, :result, :rules
 	end
 
 
-	game = Game.new
-	game.prompt
-	item1 = game.accept
-	item2 = game.game_choice
-	game.inform(item1)
-	game.set_rules
-	game.compare(item1,item2)
-	puts "You " + game.declare_winner
+	# game = Game.new
+	# game.prompt
+	# item1 = game.accept
+	# item2 = game.game_choice
+	# game.inform(item1)
+	# game.set_rules
+	# game.compare(item1,item2)
+	# puts "You " + game.declare_winner
 
 
 end
