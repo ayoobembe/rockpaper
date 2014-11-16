@@ -45,28 +45,6 @@ attr_accessor :players, :player_choice, :game_choice, :items, :result, :rules
 		result
 	end
 
-	
-
-	#How does the game select an item
-
-	#How does the game decide who wins?
-	
-
-=begin 
-	how to decide who wins...
-	i)Rock wins scissors
-	ii)scissors win paper
-	iii)paper wins rock
-=end
-	
-
-
-
-
-
-
-
-
 
 	game = Game.new
 	game.prompt
