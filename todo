@@ -1,0 +1,9 @@
+a) Deploy online
+b) Add multiple users
+c) Add multiple rounds
+
+
+
+Steps for deploying to web:
+	i) Gemfile
+		run: cucumber-sinatra init --app <appName> lib/server.rb(OR)<appName>.rb
