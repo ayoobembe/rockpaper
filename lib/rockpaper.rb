@@ -22,8 +22,12 @@ class RockPaper < Sinatra::Base
   post '/new_game' do 
   	@name = params[:name]
   	player1.name = @name
-  	"You said #{player1.name}"
+  	erb :new_game
   end
+
+
+
+
 
 
 
