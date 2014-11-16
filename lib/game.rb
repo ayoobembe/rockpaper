@@ -1,4 +1,4 @@
-require './player'
+require 'player'
 
 class Game
 attr_accessor :players, :player_choice, :game_choice, :items, :result, :rules
@@ -6,14 +6,10 @@ attr_accessor :players, :player_choice, :game_choice, :items, :result, :rules
 
 	def initialize
 		@players=[]
-		@items = %w(Rock Paper Scissors)
+		@items = %w(rock paper scissors)
 		@player_choice
 		@game_choice = @items.sample
-		@rules = {
-			:rock => {:rock => 'drew', :paper =>'lost', :scissors => 'won'  }
-			:paper => {:rock => 'won', :paper =>'drew', :scissors => 'lost'  }
-			:scissors => {:rock => 'lost', :paper =>'won', :scissors => 'drew'  }
-		}
+		@rules 
 		@result
 	end
 
@@ -33,13 +29,23 @@ attr_accessor :players, :player_choice, :game_choice, :items, :result, :rules
 		puts "The computer chose #{game_choice}"
 	end
 
+	def set_rules
+		@rules = {
+			:rock => {:rock => 'drew', :paper =>'lost', :scissors => 'won'  },
+			:paper => {:rock => 'won', :paper =>'drew', :scissors => 'lost'  },
+			:scissors => {:rock => 'lost', :paper =>'won', :scissors => 'drew'  }
+		}
+	end
+
 	def compare(player_choice, computer_choice)
-		self.result = rules[player_choice.to_sym]
+		self.result = self.rules.fetch(player_choice.to_sym).fetch(computer_choice.to_sym)
 	end
 
 	def declare_winner
-
+		result
 	end
+
+	
 
 	#How does the game select an item
 
@@ -64,9 +70,13 @@ attr_accessor :players, :player_choice, :game_choice, :items, :result, :rules
 
 	game = Game.new
 	game.prompt
-	item = game.accept
-	game.inform(item)
-	puts game.player_choice
-	puts game.game_choice
+	item1 = game.accept
+	item2 = game.game_choice
+	game.inform(item1)
+	# puts game.player_choice
+	# puts game.game_choice
+	game.set_rules
+	game.compare(item1,item2)
+	puts game.declare_winner
 
 end
