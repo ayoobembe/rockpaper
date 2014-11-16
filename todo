@@ -6,4 +6,16 @@ c) Add multiple rounds
 
 Steps for deploying to web:
 	i) Gemfile
-		run: cucumber-sinatra init --app <appName> lib/server.rb(OR)<appName>.rb
+		run: {cucumber-sinatra init --app <appName> lib/server.rb(OR)<appName>.rb} to create app directory structure
+
+	ii) Features
+		write feature e.g features/<fileName>.feature
+
+	iii) Run cucumber. This should fail. Then run
+	rackup to view basic site on localhost:9292
+
+	iv) Create views directory in folder strucutre and 
+	use set :views, Proc.new{File.join(root,'..','views')}
+	to inform app where views is.
+
+	v) Create index page.
