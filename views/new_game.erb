@@ -1,12 +1,16 @@
 
 <% unless @name %>
+
 	<p> What's your name?</p>
 	<form action='/new_game' method='post'>
 		<input type='text' name='name'/>
 		<input type='submit'/>	
 	</form>
+
 <% else %>
+
 	<p>Welcome <%=@name%>. Click the link below to
 		start</p>
 	<a href="game_on">Start Game</a>
+	
 <% end %>

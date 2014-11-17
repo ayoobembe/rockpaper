@@ -25,6 +25,17 @@ class RockPaper < Sinatra::Base
   	erb :new_game
   end
 
+  get '/game_on' do 
+  	erb :game_on
+  end
+
+  post '/game_on' do  
+  	@player_choice = params[:item]
+  	@game_choice = GAME.game_choice
+  	GAME.set_rules
+  	GAME.compare(@player_choice,@game_choice)
+  	GAME.declare_winner
+  end
 
 
 
