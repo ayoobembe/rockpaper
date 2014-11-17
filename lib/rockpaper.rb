@@ -34,7 +34,8 @@ class RockPaper < Sinatra::Base
   	@game_choice = GAME.game_choice
   	GAME.set_rules
   	GAME.compare(@player_choice,@game_choice)
-  	GAME.declare_winner
+  	@result = GAME.declare_winner
+  	erb :result
   end
 
 
